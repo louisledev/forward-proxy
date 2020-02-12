@@ -9,6 +9,8 @@ RUN touch /var/log/nginx/access.log \
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
 
+COPY proxy.conf /usr/local/nginx/conf/nginx.conf
+
 EXPOSE 8888
 
 STOPSIGNAL SIGTERM
